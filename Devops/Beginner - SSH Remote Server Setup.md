@@ -1,4 +1,5 @@
 https://roadmap.sh/projects/ssh-remote-server-setup
+(I have partly obscured IPs and other sensitive information)
 ___
 **Info:**
 	Setup a basic remote linux server and configure it to allow SSH.
@@ -41,14 +42,14 @@ ___
 	- **Select name & tags** - Test Instance
 	- **AMI (Application and OS Images)** - Ubuntu Server 24.04 LTS (HVM),EBS General Purpose (SSD) Volume Type
 	- **Instance type** (hardware) - t3.micro
-	- **Created new key pair** (below)
+	- **Created new key pair** (below - removed from this documentation)
 	- **Configure network** for access (VPC) 
 	- **Configure firewall rules**
 	- **Configure storage**
 	- Review config
 	- Started instance
 
-Attempts:
+#### Attempts:
 ```bash
 ssh -i C:\Users\*****\Documents\AWS ubuntu@3.107.4.36
 # Load key "C:\\Users\\*****\\Documents\\AWS": Operation not supported on socket
@@ -62,7 +63,9 @@ ssh -i "test-env.pem" ubuntu@ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.
 # ubuntu@ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com: Permission denied (publickey).
 ```
 
+Instructions from AWS:
 Instance ID
+
 ***************************** (Test Instance)
 
 1. Open an SSH client.
@@ -84,11 +87,14 @@ Example:
 ssh -i "test-env.pem" ubuntu@ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com
 ```
 
+Finally got it working - not sure why it won't allow me to ssh from Windows PC.
+- Created a VM on my device using Hyper-V and Lubuntu as the OS.
+- Setup OpenSSH server and accessed the VM.
+- Created (nano) a replica of the 'Pair Key'.
+- Modified the execution permissions of the file.
+- Ran the SSH prompt mentioned above.
 
-Finally got it working - not sure why it won't allow me to ssh from Windows PC
-Tested the steps above on the Lubuntu devops-sandbox VM and sucessfully connected to it
-
-**Terminated the EC2 instance**
+**Sucessfully connected to it and terminated the EC2 instance**
 
 ___
 ### Side Notes:
