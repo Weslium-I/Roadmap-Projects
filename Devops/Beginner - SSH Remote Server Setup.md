@@ -51,7 +51,7 @@ ___
 
 #### Attempts:
 ```bash
-ssh -i C:\Users\*****\Documents\AWS ubuntu@3.107.4.36
+ssh -i C:\Users\*****\Documents\AWS ubuntu@3.107.***.***
 # Load key "C:\\Users\\*****\\Documents\\AWS": Operation not supported on socket
 # ubuntu@3.107.***.***: Permission denied (publickey).
 
@@ -95,6 +95,12 @@ Finally got it working - not sure why it won't allow me to ssh from Windows PC.
 - Ran the SSH prompt mentioned above.
 
 **Sucessfully connected to it and terminated the EC2 instance**
+___
+### Solution (ext.)
+After researching what could be the error I notieced that I had been using the wrong command to SSH access into the EC2 instance.
+I have not changed into the correct directory or called up the 'text-env.pem' file.
+
+Thanks to only being able to SSH into the Hyper-V VM to create and copy the key details, I was forced to already be in the correct directory and run ther script.
 
 ___
 ### Side Notes:
