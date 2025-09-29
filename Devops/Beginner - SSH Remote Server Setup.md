@@ -1,3 +1,4 @@
+# SSH Remote Server Setup
 https://roadmap.sh/projects/ssh-remote-server-setup
 (I have partly obscured IPs and other sensitive information)
 ___
@@ -111,7 +112,3 @@ ___
 
 **Set up your firewall.** A security group is a set of firewall rules that control the traffic to your instance. To connect through SSH from your local computer to your instance, you need a rule that allows SSH traffic from your local computer.  
 	  **Tip:** The IP address of your local computer might change over time if your internet service provider uses dynamic IP assignment. For test instances, it's okay to allow traffic from any IP address (0.0.0.0/0) so that you can always connect even if your IP address changes. However, for production instances, especially those with sensitive data, it's best practice to allow traffic only from known IP addresses.
-
-https://roadmap.sh/projects/ssh-remote-server-setup
-
-# SSH Remote Server Setup
