@@ -3,8 +3,8 @@ ___
 **Info:**
 	Setup a basic remote linux server and configure it to allow SSH.
 
-**Start Date:** 
-	29-09-2025
+**Start/Complete Date:** 
+	29-09-2025 - same day
 ___
 ___
 ## Task
@@ -46,54 +46,24 @@ ___
 	- **Configure firewall rules**
 	- **Configure storage**
 	- Review config
-	
-
-```
-Key Pair Name: text-env
-Key type: RSA
-Key file format: '.perm' (for uses with OpenSSH)
-
-Network: vpc-0e980a47be7ad406c
-Subnet: Default
-Auto-assign public IP: Enable
-
-Security Group: launch-wizard-1
-
-___
-
-Number of instances: 1
-
-Software Image (AMI)
-	- Canonical, Ubuntu, 24.04, amd64 noble image
-	- ami-0279a86684f669718
-
-Virtual server type (instance type)
-	t3.micro
-
-Firewall (security group)
-	New security group
-
-Storage (volumes)
-	1 volume(s) - 8 GiB
-
-```
+	- Started instance
 
 Attempts:
 ```bash
-ssh -i C:\Users\Thiccy\Documents\AWS ubuntu@3.107.4.36
-# Load key "C:\\Users\\Thiccy\\Documents\\AWS": Operation not supported on socket
-# ubuntu@3.107.4.36: Permission denied (publickey).
+ssh -i C:\Users\*****\Documents\AWS ubuntu@3.107.4.36
+# Load key "C:\\Users\\*****\\Documents\\AWS": Operation not supported on socket
+# ubuntu@3.107.***.***: Permission denied (publickey).
 
-ssh -i C:\Users\Thiccy\Documents\AWS ubuntu@ip-172-31-34-111.ap-southeast-2.compute.internal
-#  ssh: Could not resolve hostname ip-172-31-34-111.ap-southeast-2.compute.internal: No such host is known.
+ssh -i C:\Users\Thiccy\Documents\AWS ubuntu@ip-172-31-***-***.ap-southeast-2.compute.internal
+#  ssh: Could not resolve hostname ip-172-31-***-***.ap-southeast-2.compute.internal: No such host is known.
 
-ssh -i "test-env.pem" ubuntu@ec2-3-107-4-36.ap-southeast-2.compute.amazonaws.com
-# Warning: Permanently added 'ec2-3-107-4-36.ap-southeast-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
-# ubuntu@ec2-3-107-4-36.ap-southeast-2.compute.amazonaws.com: Permission denied (publickey).
+ssh -i "test-env.pem" ubuntu@ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com
+# Warning: Permanently added 'ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com' (ED25519) to the list of known hosts.
+# ubuntu@ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com: Permission denied (publickey).
 ```
 
 Instance ID
-[i-03435cbde9e064bd4](https://ap-southeast-2.console.aws.amazon.com/ec2/home?region=ap-southeast-2#InstanceDetails:instanceId=i-03435cbde9e064bd4) (Test Instance)
+***************************** (Test Instance)
 
 1. Open an SSH client.
 2. Locate your private key file. The key used to launch this instance is test-env.pem
@@ -106,19 +76,19 @@ chmod 400 "test-env.pem"
 4.  Connect to your instance using its Public DNS:
 
 ```bash
-ec2-3-107-4-36.ap-southeast-2.compute.amazonaws.com
+ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com
 ```
 
 Example:
 ```bash
-ssh -i "test-env.pem" ubuntu@ec2-3-107-4-36.ap-southeast-2.compute.amazonaws.com
+ssh -i "test-env.pem" ubuntu@ec2-3-107-***-***.ap-southeast-2.compute.amazonaws.com
 ```
 
 
 Finally got it working - not sure why it won't allow me to ssh from Windows PC
 Tested the steps above on the Lubuntu devops-sandbox VM and sucessfully connected to it
 
-Terminated the EC2 instance
+**Terminated the EC2 instance**
 
 ___
 ### Side Notes:
